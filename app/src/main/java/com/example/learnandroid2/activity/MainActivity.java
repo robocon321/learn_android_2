@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.learnandroid2.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnSharedPre, btnAnimation;
+    Button btnSharedPre, btnAnimation, btnAsyncTaskBasic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void addControls(){
         btnSharedPre = findViewById(R.id.btnSharedPre);
         btnAnimation = findViewById(R.id.btnAnimation);
+        btnAsyncTaskBasic = findViewById(R.id.btnAsyncTaskBasic);
     }
 
     public void setEvents(){
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAsyncTaskBasic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AsyncTaskBasicActivity.class);
                 startActivity(intent);
             }
         });

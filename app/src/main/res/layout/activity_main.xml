@@ -14,4 +14,9 @@
         android:text="Animation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnAsyncTaskBasic"
+        android:text="Async Task Basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

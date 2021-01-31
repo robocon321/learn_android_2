@@ -14,4 +14,9 @@
       android:text="Rotate"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
+  <Button
+      android:id="@+id/btnForwardActivity"
+      android:text="Forward between 2 screen"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
 </LinearLayout>

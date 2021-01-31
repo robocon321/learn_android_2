@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.learnandroid2.R;
 
 public class AnimationActivity extends AppCompatActivity {
-    Button btnAlpha, btnRotate;
+    Button btnAlpha, btnRotate, btnForwardActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class AnimationActivity extends AppCompatActivity {
     public void addControls(){
         btnAlpha = findViewById(R.id.btnAlpha);
         btnRotate = findViewById(R.id.btnRotate);
+        btnForwardActivity = findViewById(R.id.btnForwardActivity);
     }
 
     public void setEvents(){
@@ -38,6 +39,14 @@ public class AnimationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AnimationActivity.this, AniRotateActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnForwardActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AnimationActivity.this, AniForwardIntentActivity.class);
                 startActivity(intent);
             }
         });

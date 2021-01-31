@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid2">
-        <activity android:name=".activity.AniRotateActivity"></activity>
+        <activity android:name=".activity.AsyncTaskBasicActivity"></activity>
+        <activity android:name=".activity.AniForwardIntentActivity" />
+        <activity android:name=".activity.AniRotateActivity" />
         <activity android:name=".activity.AniAlphaActivity" />
         <activity android:name=".activity.AnimationActivity" />
         <activity android:name=".activity.SharedPreActivity" />
