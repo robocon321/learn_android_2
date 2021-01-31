@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/imgAsync"
+        android:src="@drawable/reload"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+    <Button
+        android:id="@+id/btnAsync"
+        android:layout_gravity="center"
+        android:text="Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/editAsync"
+        android:hint="Enter your url"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

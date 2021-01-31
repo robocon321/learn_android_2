@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.learnandroid2.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnSharedPre, btnAnimation, btnAsyncTaskBasic;
+    Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnSharedPre = findViewById(R.id.btnSharedPre);
         btnAnimation = findViewById(R.id.btnAnimation);
         btnAsyncTaskBasic = findViewById(R.id.btnAsyncTaskBasic);
+        btnAsyncLoadImage = findViewById(R.id.btnAsyncLoadImage);
     }
 
     public void setEvents(){
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AsyncTaskBasicActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAsyncLoadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AsyncTaskLoadImageActivity.class);
                 startActivity(intent);
             }
         });
