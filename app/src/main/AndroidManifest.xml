@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid2">
-        <activity android:name=".activity.AniAlphaActivity"></activity>
-        <activity android:name=".activity.AnimationActivity"></activity>
+        <activity android:name=".activity.AniRotateActivity"></activity>
+        <activity android:name=".activity.AniAlphaActivity" />
+        <activity android:name=".activity.AnimationActivity" />
         <activity android:name=".activity.SharedPreActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
