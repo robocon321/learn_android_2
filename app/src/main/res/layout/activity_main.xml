@@ -9,4 +9,9 @@
         android:text="Shared Preferences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnAnimation"
+        android:text="Animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
