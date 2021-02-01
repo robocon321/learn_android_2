@@ -40,7 +40,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
-    Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson;
+    Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         btnJson = findViewById(R.id.btnJson);
         btnVolleyString = findViewById(R.id.btnVolleyString);
         btnVolleyJson = findViewById(R.id.btnVolleyJson);
+        btnMedia = findViewById(R.id.btnMedia);
     }
 
     public void setEvents(){
@@ -146,6 +147,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 queue.add(request);
+            }
+        });
+        btnMedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MediaActivity.class);
+                startActivity(intent);
             }
         });
     }
