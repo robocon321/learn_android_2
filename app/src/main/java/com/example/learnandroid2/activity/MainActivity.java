@@ -30,7 +30,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
-    Button btnReadRss;
+    Button btnReadRss, btnJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnAsyncTaskBasic = findViewById(R.id.btnAsyncTaskBasic);
         btnAsyncLoadImage = findViewById(R.id.btnAsyncLoadImage);
         btnReadRss = findViewById(R.id.btnReadRSS);
+        btnJson = findViewById(R.id.btnJson);
     }
 
     public void setEvents(){
@@ -85,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
+            }
+        });
+
+        btnJson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, JsonActivity.class);
+                startActivity(intent);
             }
         });
     }
