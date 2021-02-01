@@ -5,12 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.learnandroid2.R;
 
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -30,7 +40,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
-    Button btnReadRss, btnJson;
+    Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         btnAsyncLoadImage = findViewById(R.id.btnAsyncLoadImage);
         btnReadRss = findViewById(R.id.btnReadRSS);
         btnJson = findViewById(R.id.btnJson);
+        btnVolleyString = findViewById(R.id.btnVolleyString);
+        btnVolleyJson = findViewById(R.id.btnVolleyJson);
     }
 
     public void setEvents(){
@@ -94,6 +106,46 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, JsonActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnVolleyString.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://developer.mozilla.org/vi/docs/Learn/Getting_started_with_the_web/HTML_basics";
+
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("Response", response);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error", error.getMessage());
+                    }
+                });
+                queue.add(request);
+            }
+        });
+        btnVolleyJson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://api.mocki.io/v1/e1ce6c11";
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("Response", response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error", error.getMessage());
+                    }
+                });
+                queue.add(request);
             }
         });
     }
