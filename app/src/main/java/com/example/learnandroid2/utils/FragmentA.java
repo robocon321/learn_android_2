@@ -21,7 +21,9 @@ public class FragmentA extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.layout_fragment_a, container);
+        View view = inflater.inflate(R.layout.layout_fragment_a, null);
+//        View view = inflater.inflate(R.layout.layout_fragment_a, container);
+//         Dung cho bai Fragment event
 
         btnFragmentA = view.findViewById(R.id.btnFragmentA);
         txtFragmentA = view.findViewById(R.id.txtFragmentA);
