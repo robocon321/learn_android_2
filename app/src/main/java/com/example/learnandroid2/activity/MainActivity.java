@@ -15,7 +15,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.learnandroid2.R;
@@ -24,13 +23,10 @@ import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -41,6 +37,7 @@ import javax.xml.parsers.ParserConfigurationException;
 public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
     Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
+    Button btnTodo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btnVolleyString = findViewById(R.id.btnVolleyString);
         btnVolleyJson = findViewById(R.id.btnVolleyJson);
         btnMedia = findViewById(R.id.btnMedia);
+        btnTodo = findViewById(R.id.btnTodo);
     }
 
     public void setEvents(){
@@ -153,6 +151,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MediaActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SqliteTodoActivity.class);
                 startActivity(intent);
             }
         });
