@@ -37,7 +37,7 @@ import javax.xml.parsers.ParserConfigurationException;
 public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
     Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
-    Button btnTodo, btnFragment, btnFragment_AddRemove;
+    Button btnTodo, btnFragment, btnFragment_AddRemove, btnSocketIO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnTodo = findViewById(R.id.btnTodo);
         btnFragment = findViewById(R.id.btnFragment);
         btnFragment_AddRemove = findViewById(R.id.btnFragment_AddRemove);
+        btnSocketIO = findViewById(R.id.btnSocketIO);
     }
 
     public void setEvents(){
@@ -175,6 +176,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RemoveAddFragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSocketIO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SocketIoActivity.class);
                 startActivity(intent);
             }
         });
