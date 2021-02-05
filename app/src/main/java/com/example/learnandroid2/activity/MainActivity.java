@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
     Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
     Button btnTodo, btnFragment, btnFragment_AddRemove, btnSocketIO;
+    Button btnService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btnFragment = findViewById(R.id.btnFragment);
         btnFragment_AddRemove = findViewById(R.id.btnFragment_AddRemove);
         btnSocketIO = findViewById(R.id.btnSocketIO);
+        btnService = findViewById(R.id.btnService);
     }
 
     public void setEvents(){
@@ -184,6 +186,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SocketIoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
                 startActivity(intent);
             }
         });

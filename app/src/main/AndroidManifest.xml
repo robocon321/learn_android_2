@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid2">
-        <activity android:name=".activity.SocketIoActivity"></activity>
+        <activity android:name=".activity.BoundServiceActivity"></activity>
+        <activity android:name=".activity.StartServiceActivity" />
+        <activity android:name=".activity.ServiceActivity" />
+        <activity android:name=".activity.SocketIoActivity" />
         <activity android:name=".activity.RemoveAddFragmentActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.SqliteTodoActivity" />
@@ -31,6 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".utils.StartService"/>
+        <service android:name=".utils.BoundService"/>
     </application>
 
 </manifest>
