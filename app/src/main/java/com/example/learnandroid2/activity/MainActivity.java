@@ -197,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private class ReadRSS extends AsyncTask<String, Void, String>{
