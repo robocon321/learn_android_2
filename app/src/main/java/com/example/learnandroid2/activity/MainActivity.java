@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
     Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
     Button btnTodo, btnFragment, btnFragment_AddRemove, btnSocketIO;
-    Button btnService, btnViewPager;
+    Button btnService, btnViewPager, btnDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnSocketIO = findViewById(R.id.btnSocketIO);
         btnService = findViewById(R.id.btnService);
         btnViewPager = findViewById(R.id.btnViewPager);
+        btnDrawerLayout = findViewById(R.id.btnDrawerLayout);
     }
 
     public void setEvents(){
@@ -203,6 +204,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDrawerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DrawerLayoutActivity.class);
                 startActivity(intent);
             }
         });

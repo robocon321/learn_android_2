@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid2">
-        <activity android:name=".activity.ViewPagerActivity"></activity>
+        <activity android:name=".activity.DrawerLayoutActivity"></activity>
+        <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.BoundServiceActivity" />
         <activity android:name=".activity.StartServiceActivity" />
         <activity android:name=".activity.ServiceActivity" />
