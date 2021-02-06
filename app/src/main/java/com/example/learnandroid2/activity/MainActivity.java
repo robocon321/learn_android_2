@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSharedPre, btnAnimation, btnAsyncTaskBasic, btnAsyncLoadImage;
     Button btnReadRss, btnJson, btnVolleyString, btnVolleyJson, btnMedia;
     Button btnTodo, btnFragment, btnFragment_AddRemove, btnSocketIO;
-    Button btnService;
+    Button btnService, btnViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         btnFragment_AddRemove = findViewById(R.id.btnFragment_AddRemove);
         btnSocketIO = findViewById(R.id.btnSocketIO);
         btnService = findViewById(R.id.btnService);
+        btnViewPager = findViewById(R.id.btnViewPager);
     }
 
     public void setEvents(){
@@ -198,6 +199,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private class ReadRSS extends AsyncTask<String, Void, String>{
